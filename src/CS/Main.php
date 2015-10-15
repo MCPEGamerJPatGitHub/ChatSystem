@@ -10,7 +10,7 @@ use pocketmine\plugin\PluginBase;
 class Main extends PluginBase implements Listener{
     
     
-    
+    public $isActive = array();
     public function onEnable(){
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
         //when you are to lazy to add a logger
@@ -31,11 +31,19 @@ class Main extends PluginBase implements Listener{
     }
     }
     foreach($msg as $word){
-    if(strtolower($word) === "can i be op?"){
-        $ev->setCancelled();
-    $p->sendMessage("No you can't be OP!");
+        $word = "op";
+            $search = strpos($msg, $word);
+            if ($search === false) {
+                return false;//idk maybe because booleans hate me
+            } else {
+              //  $ev->setCancelled();
+                $ev->setMessage(str_replace("op","noob"));
+            }
     }
-    }
+   /* muting chat if($this->isActive[$p->getName()]{
+        $p->sendMessage($ev->getMessage(null));
+        
+    } */
     }
     }
     //anti-spam soon!
