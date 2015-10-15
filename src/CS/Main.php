@@ -31,14 +31,9 @@ class Main extends PluginBase implements Listener{
     }
     }
     foreach($msg as $word){
-    if(strtolower($word) === "how do i see my coins?" or "how do i see my money?"){
-    $p->sendMessage("Use /mymoney, /coins, or /bal. To see your money!");
-    }
-    }
-    foreach($msg as $word){
-   if(strtolower($word) === "where do i go to buy a rank?"||"how to get VIP?" or "how to get vip?"){
-    $p->sendMessage("go to our website!");
-    //canel event or nah?
+    if(strtolower($word) === "can i be op?"){
+        $ev->setCancelled();
+    $p->sendMessage("No you can't be OP!");
     }
     }
     }
