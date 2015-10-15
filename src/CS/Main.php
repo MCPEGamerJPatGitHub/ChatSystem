@@ -24,21 +24,23 @@ class Main extends PluginBase implements Listener{
     foreach($msg as $word){
     foreach($badwords as $m){
     if(strtolower($word === $m)){
-    
     $ev->setCancelled();
     $p->sendMessage("You can't say that youngster!");
     
     }
     }
     }
-    /*if(explode(" ",strtolower($ev->getMessage() === "how do i see my coins?"||"how do i see my money?"))){
+    foreach($msg as $word){
+    if(strtolower($word === "how do i see my coins?" or "how do i see my money?"))){
     $p->sendMessage("Use /mymoney, /coins, or /bal. To see your money!");
-    //canel event or nah?
-    }*/
-   /* if(explode(" ",strtolower($ev->getMessage() === "where do i go to buy a rank?"||"how to get VIP?"||"how to get vip?"))){
+    }
+    }
+    foreach($msg as $word){
+   if(strtolower($word === "where do i go to buy a rank?"||"how to get VIP?" or "how to get vip?"))){
     $p->sendMessage("go to our website!");
     //canel event or nah?
-    }*/
+    }
+    }
     }
     }
     //anti-spam soon!
