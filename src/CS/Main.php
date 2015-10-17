@@ -13,7 +13,6 @@ class Main extends PluginBase implements Listener{
     public $isActive = array();
     public function onEnable(){
     $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        //when you are to lazy to add a logger
     }
     
     public function onChat(PlayerChatEvent $ev){
@@ -34,7 +33,7 @@ class Main extends PluginBase implements Listener{
         $word = "op";
             $search = strpos($msg, $word);
             if ($search === false) {
-                return false;//idk maybe because booleans hate me
+                return false;
             } else {
               //  $ev->setCancelled();
                 $ev->setMessage(str_replace("op","noob"));
@@ -46,6 +45,4 @@ class Main extends PluginBase implements Listener{
     } */
     }
     }
-    //anti-spam soon!
-    //i am not planning on making this a PM fourms plugin so idc if code is messy like your moms clothes 
-    //OHHHH ROASTED!
+    //End of plugin.
